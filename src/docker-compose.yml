@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  nginx-dev-blog:
+    image: nginx-dev-blog:${VERSION}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - type: bind
+        source: ./SSLKeys/fullchain.pem
+        target: /etc/sslkeys/fullchain.pem
+      - type: bind
+        source: ./SSLKeys/privkey.pem
+        target: /etc/sslkeys/privkey.pem
+    ports:
+      - ${PUBLIC_PORT}:80
+      - 443:443
