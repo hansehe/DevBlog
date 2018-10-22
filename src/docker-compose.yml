@@ -13,6 +13,9 @@ services:
       - type: bind
         source: ./SSLKeys/privkey.pem
         target: /etc/sslkeys/privkey.pem
+      - type: bind
+        source: ./certbot/www
+        target: /var/www/certbot
     ports:
       - ${PUBLIC_PORT}:80
-      - 443:443
+      - ${PUBLIC_SSL_PORT}:443

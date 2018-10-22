@@ -5,14 +5,14 @@ from time import gmtime, mktime
 import os
 
 # Ref: https://skippylovesmalorie.wordpress.com/2010/02/12/how-to-generate-a-self-signed-certificate-using-pyopenssl/
-def CreateSelfSignedCert(cert_dir, cert_file, key_file):
+def CreateSelfSignedCert(cert_dir = "SSLKeys", cert_file = "fullchain.pem", key_file = "privkey.pem"):
     """
     If datacard.crt and datacard.key don't exist in cert_dir, create a new
     self-signed cert and keypair and write them into that directory.
     """
 
-    if not os.path.exists(CERT_DIR):
-        os.makedirs(CERT_DIR)
+    if not os.path.exists(cert_dir):
+        os.makedirs(cert_dir)
 
     if not os.path.exists(os.path.join(cert_dir, cert_file)) \
             or not os.path.exists(os.path.join(cert_dir, key_file)):
@@ -42,8 +42,5 @@ def CreateSelfSignedCert(cert_dir, cert_file, key_file):
             crypto.dump_privatekey(crypto.FILETYPE_PEM, k))
 
 if __name__ == "__main__":
-    CERT_DIR = "SSLKeys"
-    CERT_FILE = "fullchain.pem"
-    KEY_FILE = "privkey.pem"
-    CreateSelfSignedCert(CERT_DIR, CERT_FILE, KEY_FILE)
+    CreateSelfSignedCert()
     

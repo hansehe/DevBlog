@@ -10,6 +10,6 @@ RUN hugo
 
 FROM nginx
 
-COPY ./nginx.ssl.conf ./etc/nginx/conf.d/site.conf
+COPY ./nginx.conf ./etc/nginx/conf.d/site.conf
 
 COPY --from=builder /var/www/blog/public/ /usr/share/nginx/html/
