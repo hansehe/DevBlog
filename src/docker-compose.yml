@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   nginx-dev-blog:
-    image: nginx-dev-blog:${VERSION}
+    image: hansehe/nginx-dev-blog:${VERSION}
     build:
       context: .
       dockerfile: Dockerfile
