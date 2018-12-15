@@ -1,0 +1,25 @@
+changelog:
+    file: CHANGELOG.md
+    envKey: VERSION
+
+run:
+    selections:
+        devBlog:
+            directory: src
+            files:
+                - docker-compose.yml
+
+build:
+    selections:
+        devBlog:
+            directory: src
+            files:
+                - docker-compose.yml
+
+publish:
+    selections:
+        devBlog:
+            directory: src
+            additionalTag: latest
+            files:
+                - docker-compose.yml
