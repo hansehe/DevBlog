@@ -21,3 +21,4 @@ SSLKeys/
 *.crt
 *.key
 *.pem
+data/
