@@ -1,0 +1,7 @@
+volumes:
+    portainer_data:
+
+stacks:
+    certbot: docker-compose.certbot.yml
+    nginx_devblog: docker-compose.yml
+    portainer: docker-compose.portainer.yml

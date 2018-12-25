@@ -1,13 +1,8 @@
-version: '3.4'
-
+version: '3'
 services:
   certbot:
     image: certbot/certbot
     volumes:
-      - type: bind
-        source: ./SSLKeys
-        target: /etc/letsencrypt
-      # - type: bind
-      #   source: ./data/certbot/www
-      #   target: /var/www/certbot
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
     entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"

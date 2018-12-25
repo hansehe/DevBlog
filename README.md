@@ -12,11 +12,14 @@
     - -> python DockerBuild.py help
 
 ## Build & Run
-1. Start domain development:
-    - python DockerBuild.py start-dev
+1. Create default certificates:
+    - `chmod +x init-letsencrypt`
+    - `sudo ./init-letsencrypt`
 1. Build solution as container images:
-    - python DockerBuild.py build
+    - `dbm -build`
 2. Run solution as containers:
-    - python DockerBuild.py run
-3. Open browser to see results!
-    - Consul: http://localhost:8080
+    - `dbm -run`
+3. Publish solution as container images:
+    - `dbm -publish`
+4. Open browser to see results!
+    - https://localhost

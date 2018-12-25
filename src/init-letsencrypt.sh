@@ -1,10 +1,10 @@
 #!/bin/bash
 
-domains=( "codingplot.com" "www.codingplot.com" )
+domains=( "codingplot.com" )
 rsa_key_size=4096
-data_path="./data/certbot"
+data_path="./certbot"
 email="hans.erik.heggem@gmail.com" #Adding a valid address is strongly recommended 
-staging=0 #Set to 1 if you're just testing your setup to avoid hitting request limits
+staging=1 #Set to 1 if you're just testing your setup to avoid hitting request limits
 
 echo "### Preparing directories in $data_path ..."
 rm -Rf "$data_path"
@@ -15,7 +15,7 @@ mkdir -p "$data_path/conf/live/$domains"
 echo "### Creating dummy certificate ..."
 path="/etc/letsencrypt/live/$domains"
 mkdir -p "$path"
-docker-compose run -f docker-compose.certbot.yml --rm --entrypoint "\
+docker-compose -f docker-compose.certbot.yml run --rm --entrypoint "\
     openssl req -x509 -nodes -newkey rsa:1024 -days 1\
       -keyout '$path/privkey.pem' \
       -out '$path/fullchain.pem' \
@@ -28,7 +28,7 @@ curl -s https://raw.githubusercontent.com/certbot/certbot/master/certbot/ssl-dhp
 
 
 echo "### Starting nginx ..."
-docker-compose up -d nginx-dev-blog
+docker-compose up -d nginx
 
 
 echo "### Deleting dummy certificate ..."
@@ -56,7 +56,7 @@ esac
 #Enable staging mode if needed
 if [ $staging != "0" ]; then staging_arg="--staging"; fi
 
-docker-compose run -f docker-compose.certbot.yml --rm --entrypoint "\
+docker-compose -f docker-compose.certbot.yml run --rm --entrypoint "\
   certbot certonly --webroot -w /var/www/certbot \
     $staging_arg \
     $email_arg \
@@ -65,4 +65,4 @@ docker-compose run -f docker-compose.certbot.yml --rm --entrypoint "\
     --agree-tos \
     --force-renewal" certbot
 
-docker-compose stop nginx-dev-blog
+docker-compose stop nginx
