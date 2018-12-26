@@ -7,14 +7,14 @@ run:
         devBlog:
             directory: src
             files:
-                - docker-compose.yml
+                - docker-compose.nginx.yml
 
 build:
     selections:
         devBlog:
             directory: src
             files:
-                - docker-compose.yml
+                - docker-compose.nginx.yml
 
 publish:
     selections:
@@ -22,4 +22,4 @@ publish:
             directory: src
             additionalTag: latest
             files:
-                - docker-compose.yml
+                - docker-compose.nginx.yml

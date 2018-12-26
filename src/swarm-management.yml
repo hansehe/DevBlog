@@ -3,5 +3,5 @@ volumes:
 
 stacks:
     certbot: docker-compose.certbot.yml
-    nginx_devblog: docker-compose.yml
+    nginx_devblog: docker-compose.nginx.yml
     portainer: docker-compose.portainer.yml
