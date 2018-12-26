@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Many thanks to: https://github.com/wmnnd/nginx-certbot.git
+
 domains=( "codingplot.com" )
 rsa_key_size=4096
 data_path="./certbot"
