@@ -1,7 +1,10 @@
 volumes:
-    portainer_data:
+  portainer_data:
 
 stacks:
-    certbot: docker-compose.certbot.yml
-    nginx: docker-compose.nginx.yml
-    portainer: docker-compose.portainer.yml
+  certbot: docker-compose.certbot.yml
+  nginx: docker-compose.nginx.yml
+  portainer: docker-compose.portainer.yml
+
+env_files:
+  - .env
