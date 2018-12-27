@@ -17,9 +17,13 @@
     - `sudo ./init-letsencrypt`
 1. Build solution as container images:
     - `dbm -build`
-2. Run solution as containers:
+2. Develop with Hugo:
+    - Install Hugo: 
+        - https://gohugo.io/getting-started/installing/ 
+    - `hugo serve -D`
+    - http://localhost:1313
+3. Run solution as containers, and see results in browser:
     - `dbm -run`
-3. Publish solution as container images:
-    - `dbm -publish`
-4. Open browser to see results!
     - https://localhost
+4. Publish solution as container images:
+    - `dbm -publish`
