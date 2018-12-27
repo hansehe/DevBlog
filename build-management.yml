@@ -13,6 +13,7 @@ build:
     selections:
         devBlog:
             directory: src
+            additionalTag: latest
             files:
                 - docker-compose.nginx.yml
 

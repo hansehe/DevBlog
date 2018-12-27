@@ -22,4 +22,5 @@ SSLKeys/
 *.key
 *.pem
 certbot/
+docker-compose.build.*.yml
 docker-compose.publish.*.yml
