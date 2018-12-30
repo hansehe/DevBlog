@@ -1,0 +1,23 @@
+version: '3.3'
+
+services:
+  prometheus:
+    image: prom/prometheus:v2.1.0
+    hostname: prometheus
+    networks:
+      - backend_network
+    command:
+        - '--config.file=/etc/prometheus/prometheus.yml'
+    ports:
+        - 9090:9090
+    configs:
+      - source: prometheus_yml
+        target: /etc/prometheus/prometheus.yml
+
+configs:
+  prometheus_yml:
+    external: true
+
+networks:
+  backend_network:
+    external: true

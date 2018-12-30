@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  grafana:
+    image: grafana/grafana:3.0.0-beta7
+    hostname: grafana
+    networks:
+      - backend_network
+    ports:
+        - 3000:3000
+
+networks:
+  backend_network:
+    external: true
