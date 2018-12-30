@@ -1,11 +1,8 @@
 +++
 showonlyimage = true
-draft = false
+draft = true
 image = "img/portfolio/outbox_email.jpg"
 date = "2018-12-15T19:34:33+01:00"
-title = "Integration Hell & Microservice Development"
+title = "Message Flow & Invariance"
 weight = 2
 +++
-
-PACT - Consumer driven testing 
-

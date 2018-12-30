@@ -12,18 +12,19 @@
     - -> python DockerBuild.py help
 
 ## Build & Run
-1. Create default certificates:
-    - `chmod +x init-letsencrypt`
-    - `sudo ./init-letsencrypt`
 1. Build solution as container images:
     - `dbm -build`
-2. Develop with Hugo:
+2. Create default certificates:
+    - `chmod +x init-letsencrypt`
+    - `sudo ./init-letsencrypt`
+3. Develop with Hugo:
     - Install Hugo: 
-        - https://gohugo.io/getting-started/installing/ 
+        - https://gohugo.io/getting-started/installing/
+    - `cd src/` 
     - `hugo serve -D`
     - http://localhost:1313
-3. Run solution as containers, and see results in browser:
+4. Run solution as containers, and see results in browser:
     - `dbm -run`
     - https://localhost
-4. Publish solution as container images:
+5. Publish solution as container images:
     - `dbm -publish`
