@@ -1,13 +1,14 @@
-version: '3'
+version: '3.2'
 
 services:
   nginx-exporter:
     image: nginx/nginx-prometheus-exporter:0.2.0
     hostname: nginx-exporter
+    command: -nginx.scrape-uri http://nginx_nginx:8080/basic_status
     networks:
       - backend_network
-    environment:
-      - nginx.scrape-uri:http://nginx-dev-blog:8080/stub_status
+    depends_on:
+      - nginx_nginx
 
 networks:
   backend_network:

@@ -16,6 +16,8 @@ build:
             additionalTag: latest
             files:
                 - docker-compose.nginx.yml
+                - docker-compose.grafana.yml
+                - docker-compose.prometheus.yml
 
 publish:
     selections:
@@ -24,3 +26,5 @@ publish:
             additionalTag: latest
             files:
                 - docker-compose.nginx.yml
+                - docker-compose.grafana.yml
+                - docker-compose.prometheus.yml

@@ -1,22 +1,16 @@
-version: '3.3'
+version: '3.2'
 
 services:
   prometheus:
-    image: prom/prometheus:v2.1.0
+    image: hansehe/prometheus-dev-blog:${VERSION}
     hostname: prometheus
+    build:
+      context: ./prometheus
+      dockerfile: Dockerfile
     networks:
       - backend_network
-    command:
-        - '--config.file=/etc/prometheus/prometheus.yml'
     ports:
         - 9090:9090
-    configs:
-      - source: prometheus_yml
-        target: /etc/prometheus/prometheus.yml
-
-configs:
-  prometheus_yml:
-    external: true
 
 networks:
   backend_network:

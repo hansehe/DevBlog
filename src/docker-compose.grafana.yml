@@ -1,9 +1,12 @@
-version: '3'
+version: '3.2'
 
 services:
   grafana:
-    image: grafana/grafana:3.0.0-beta7
+    image: hansehe/grafana-dev-blog:${VERSION}
     hostname: grafana
+    build:
+      context: ./grafana
+      dockerfile: Dockerfile
     networks:
       - backend_network
     ports:
