@@ -2,7 +2,7 @@
 
 # Many thanks to: https://github.com/wmnnd/nginx-certbot.git
 
-domains=( "codingplot.com" )
+domains=( "northerncoding.com" )
 rsa_key_size=4096
 data_path="./certbot"
 email="hans.erik.heggem@gmail.com" #Adding a valid address is strongly recommended 
