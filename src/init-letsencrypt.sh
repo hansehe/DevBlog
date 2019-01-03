@@ -30,7 +30,8 @@ curl -s https://raw.githubusercontent.com/certbot/certbot/master/certbot/ssl-dhp
 
 
 echo "### Starting nginx ..."
-docker-compose up -d nginx
+docker-compose -f docker-compose.nginx.yml pull
+docker-compose -f docker-compose.nginx.yml up -d nginx
 
 
 echo "### Deleting dummy certificate ..."
@@ -67,4 +68,4 @@ docker-compose -f docker-compose.certbot.yml run --rm --entrypoint "\
     --agree-tos \
     --force-renewal" certbot
 
-docker-compose stop nginx
+docker-compose -f docker-compose.nginx.yml stop nginx
