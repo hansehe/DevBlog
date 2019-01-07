@@ -12,7 +12,7 @@ googleAnalytics = ""
   # Use custom.css for your custom styling
   style = "sea"
   description = "Thoughts & Ideas On Software Development"
-  copyright = "&copy;2016 Hans Erik Heggem"
+  copyright = "&copy;2019 Hans Erik Heggem"
   sidebarAbout = [
     "Full stack software developer with a passion for microservice architecture."
   ]
