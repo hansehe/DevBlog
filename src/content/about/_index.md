@@ -5,7 +5,7 @@ title = "About me"
 
 ![This is me][1]
 
-I am a full stack developer based in Northern Norway, Tromsø, who thrives to build advanced software systems with high degree of quality at minimal expence to efficiency. 
+Hans Erik Heggem is a full stack developer living in Tromsø located above the arctic circle in Norway. He thrives to build advanced software systems with a high degree of quality at minimal expence to efficiency.
 
 Software development means handling complexity at a daily basis, and both quality and efficiency is difficult to maintain as complexity increases. Although complexity doesn't go away when converting your monolith to microservices, it helps to isolate the complexity in smaller and more manageable services. The complexity moves from a large system tangled with inconceivable interfaces constrained by one programming language, to a more human friendly language - message patterns. 
 
