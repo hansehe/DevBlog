@@ -41,7 +41,7 @@ googleAnalytics = "UA-131848565-1"
   url = "about/"
 
   [[params.navlinks]]
-  name = "Get in touch"
+  name = "Contact"
   url = "contact/"
 
   [params.social]
