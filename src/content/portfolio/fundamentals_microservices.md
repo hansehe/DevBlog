@@ -7,7 +7,7 @@ title = "Fundamentals Of Microservices"
 weight = 0
 +++
 
-Microservices offer many great advantages all the way from development to production. It offers autonomy, flexibility and scale for software systems, and it has become a popular solution to the monolith. However, there are some fundamentals to keep in mind before diving into the world on microservices.
+Microservices offer many great advantages all the way from development to production. It offers autonomy, flexibility and scale for software systems, and it has become a popular solution to the monolith. However, there are some fundamentals to keep in mind before diving into the world of microservices.
 
 ### Business Domain
 Microservices are well designed when they are modelled by the bounded context of a business domain, and serves the single purpose of the context well. Designing a service based on technical abilitites defies the single purpose of a microservice, instead commonly used tooling should be published as artifacts available to all services. Modelling services by business domain instead of technical abilities naturally leads to more loosely coupled services with high cohesion, and technical tools are shared as artifacts not owned by any of the services. 
