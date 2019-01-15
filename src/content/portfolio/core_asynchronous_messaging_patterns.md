@@ -1,7 +1,7 @@
 +++
 showonlyimage = false
 draft = false
-image = "img/portfolio/workqueue.jpeg"
+# image = "img/portfolio/workqueue.jpeg"
 date = "2018-12-26T19:34:33+01:00"
 title = "Core Asynchronous Messaging Patterns"
 weight = 2
@@ -11,7 +11,7 @@ Messages define the core of a distributed microservice system, thus all of the b
 
 In general, an asynchronous message ends up in a queue handled by the message broker, and the consumer service pulls messages from the queue to handle the business related to the message. As an example, the widely used [RabbitMq](https://www.rabbitmq.com/) message broker which implements the AMQP protocol mainly consist of two modules, exchanges and queues. Exchanges handles all incoming messages tagged with a topic and routes them to queues matching the topic. [^amqp_footnote] 
 
-![alt text](../../img/portfolio/async_rabbitmq.png)
+<!-- ![alt text](../../img/portfolio/async_rabbitmq.png) -->
 
 In general, the two main concepts of emitting a message is done as an event or by command.
 
