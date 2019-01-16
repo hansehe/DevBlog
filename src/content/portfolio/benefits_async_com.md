@@ -1,7 +1,7 @@
 +++
 showonlyimage = false
 draft = false
-# image = "img/portfolio/asynchronous-communication-email.png"
+image = "img/portfolio/asynchronous-communication.jpg"
 date = "2018-12-15T19:34:33+01:00"
 title = "The Benefits Of Asynchronous Communication"
 weight = 1
