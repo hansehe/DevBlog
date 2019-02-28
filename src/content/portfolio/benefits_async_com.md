@@ -4,7 +4,7 @@ draft = false
 image = "img/portfolio/asynchronous-communication.jpg"
 date = "2018-12-15T19:34:33+01:00"
 title = "The Benefits Of Asynchronous Communication"
-weight = 1
+weight = 2
 +++
 
 In a typical monolitical architecture, all business transaction are usually handled in a synchronous fashion. The business transaction must handle the full aspect of the business logic to succeed, and this design pattern tends to become increasingle time consuming when the business logic grows. 

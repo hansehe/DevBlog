@@ -4,7 +4,7 @@ draft = false
 image = "img/portfolio/workqueue.jpg"
 date = "2018-12-26T19:34:33+01:00"
 title = "Core Asynchronous Messaging Patterns"
-weight = 2
+weight = 3
 +++
 
 Messages define the core of a distributed microservice system, thus all of the business transactions are exposed as messages between microservices. In this section we will discuss some core consepts of messaging patterns.
