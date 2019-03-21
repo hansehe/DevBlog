@@ -1,6 +1,6 @@
 +++
 showonlyimage = false
-draft = false
+draft = true
 image = "img/portfolio/docker_swarm.png"
 date = "2019-02-28T19:34:33+01:00"
 title = "SwarmManagement - Container Deployment Tool"
