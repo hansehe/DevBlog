@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "/blog/"
 title = "Northern Coding"
 theme = "hugo-creative-portfolio-theme"
 languageCode = "en-us"

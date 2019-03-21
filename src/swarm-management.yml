@@ -3,6 +3,7 @@ networks:
 
 volumes:
   portainer_data:
+  rabbitmq_data:
 
 stacks:
   certbot: docker-compose.certbot.yml
@@ -11,6 +12,10 @@ stacks:
   prometheus: docker-compose.prometheus.yml
   grafana: docker-compose.grafana.yml
   portainer: docker-compose.portainer.yml
+  rabbitmq: docker-compose.rabbitmq.yml
+  mqttweb: docker-compose.mqtt.web.yml
+  mqttweb: docker-compose.mqtt.web.yml
+  dotnetpingpong: docker-compose.dotnet.pingpong.yml
 
 env_files:
   - .env

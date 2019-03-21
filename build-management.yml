@@ -2,12 +2,12 @@ changelog:
     file: CHANGELOG.md
     envKey: VERSION
 
-run:
+swarm:
     selections:
         devBlog:
             directory: src
             files:
-                - docker-compose.nginx.yml
+                - swarm-management.yml
 
 build:
     selections:

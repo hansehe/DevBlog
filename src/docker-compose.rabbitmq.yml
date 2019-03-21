@@ -1,0 +1,39 @@
+version: '3.2'
+
+services:
+  rabbitmq-service:
+    image: hansehe/rabbitmq-mqtt:latest
+    hostname: rabbitmq-service
+    # ports:
+      # - 5671:5671
+      # - 5672:5672
+      # - 15672:15672
+      # - 15673:15673
+      # - 15675:15675
+      # - 8883:8883
+      # - 1883:1883
+    volumes:
+      - source: RabbitConfig/rabbitmq.conf
+        target: /etc/rabbitmq/rabbitmq.conf
+    environment:
+      RABBITMQ_NODENAME: rabbit
+    networks:
+      - backend_network
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+
+networks:
+  backend_network:
+    external: true
+
+secrets:
+  site.crt:
+    external: true
+  site.ca:
+    external: true
+  site.key:
+    external: true
+
+volumes:
+  rabbitmq_data:
+    external: true

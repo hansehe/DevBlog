@@ -18,8 +18,9 @@
 1. Build solution as container images:
     - `dbm -build`
 2. Create default certificates:
-    - `chmod +x init-letsencrypt`
-    - `sudo ./init-letsencrypt`
+    - `cd src/`
+    - `chmod +x init-letsencrypt.sh`
+    - `sudo ./init-letsencrypt.sh`
 3. Develop with Hugo:
     - Install Hugo: 
         - https://gohugo.io/getting-started/installing/
@@ -27,7 +28,7 @@
     - `hugo serve -D`
     - http://localhost:1313
 4. Run solution as containers, and see results in browser:
-    - `dbm -run`
+    - `dbm -swarm -start`
     - https://localhost
 5. Publish solution as container images:
     - `dbm -publish`
