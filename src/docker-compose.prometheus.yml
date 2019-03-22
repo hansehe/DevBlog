@@ -9,8 +9,8 @@ services:
       dockerfile: Dockerfile
     networks:
       - backend_network
-    ports:
-        - 9090:9090
+    # ports:
+    #     - 9090:9090
 
 networks:
   backend_network:

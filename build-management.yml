@@ -11,20 +11,36 @@ swarm:
 
 build:
     selections:
-        devBlog:
+        blog:
             directory: src
             additionalTag: latest
             files:
                 - docker-compose.nginx.yml
+        grafana:
+            directory: src
+            additionalTag: latest
+            files:
                 - docker-compose.grafana.yml
+        prometheus:
+            directory: src
+            additionalTag: latest
+            files:
                 - docker-compose.prometheus.yml
 
 publish:
     selections:
-        devBlog:
+        blog:
             directory: src
             additionalTag: latest
             files:
                 - docker-compose.nginx.yml
+        grafana:
+            directory: src
+            additionalTag: latest
+            files:
                 - docker-compose.grafana.yml
+        prometheus:
+            directory: src
+            additionalTag: latest
+            files:
                 - docker-compose.prometheus.yml

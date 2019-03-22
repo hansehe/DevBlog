@@ -9,8 +9,8 @@ services:
       dockerfile: Dockerfile
     networks:
       - backend_network
-    ports:
-        - 3000:3000
+    # ports:
+    #     - 3002:3000
 
 networks:
   backend_network:

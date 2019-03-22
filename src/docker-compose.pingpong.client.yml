@@ -1,9 +1,9 @@
 version: '3'
 
 services:
-  mqtt-web:
-    image: hansehe/mqtt-web:latest
-    hostname: mqtt-web
+  pingpong-web:
+    image: hansehe/pingpong-web:latest
+    hostname: pingpong-web
     networks:
       - backend_network
 

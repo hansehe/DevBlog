@@ -3,8 +3,11 @@ version: '3'
 services:
   portainer:
     image: portainer/portainer
+    hostname: portainer
     ports:
       - 9000:9000
+    networks:
+      - backend_network
     command: -H unix:///var/run/docker.sock
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
@@ -12,4 +15,8 @@ services:
 
 volumes:
   portainer_data:
+    external: true
+
+networks:
+  backend_network:
     external: true
