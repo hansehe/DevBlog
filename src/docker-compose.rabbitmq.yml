@@ -16,8 +16,8 @@ services:
       RABBITMQ_NODENAME: rabbit
     networks:
       - backend_network
-    # volumes:
-    #   - rabbitmq_data:/var/lib/rabbitmq
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
 
 networks:
   backend_network:
