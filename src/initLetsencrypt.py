@@ -2,6 +2,7 @@ import os
 import requests
 import subprocess
 import shutil
+import time
 
 
 def InitLetsencrypt(domain, \
@@ -37,6 +38,7 @@ def InitLetsencrypt(domain, \
     ExecuteTerminalCommand(command)
     command = "docker-compose -f {0} up -d nginx".format(docker_compose_nginx)
     ExecuteTerminalCommand(command)
+    time.sleep(2)
 
     print("### Deleting dummy certificate ...")
     shutil.rmtree(os.path.join(data_path, 'conf/live'), True)
@@ -66,6 +68,7 @@ def InitLetsencrypt(domain, \
                 domain_arg, \
                 rsa_key_size)
     ExecuteTerminalCommand(command)
+    time.sleep(2)
 
     command = "docker-compose -f {0} stop nginx".format(docker_compose_nginx)
     ExecuteTerminalCommand(command)
