@@ -4,14 +4,13 @@ import subprocess
 import shutil
 
 
-def InitLetsencrypt():
-    domain = 'northerncoding.com'
-    rsa_key_size = 4096
-    data_path = './certbot'
-    email = 'hans.erik.heggem@gmail.com'
-    staging = True
-    docker_compose_nginx = 'docker-compose.nginx.yml'
-    docker_compose_certbot = 'docker-compose.certbot.yml'
+def InitLetsencrypt(domain, \
+        staging = True, \
+        email = '', \
+        data_path = './certbot',
+        docker_compose_nginx = 'docker-compose.nginx.yml', \
+        docker_compose_certbot = 'docker-compose.certbot.yml',
+        rsa_key_size = 4096):
 
     print("### Preparing directories in {0} ...".format(data_path))
     shutil.rmtree(data_path, True)
@@ -82,4 +81,7 @@ def SaveToFile(filename, content):
         file.write(content)
 
 if __name__ == "__main__":
-    InitLetsencrypt()
+    domain = 'northerncoding.com'
+    email = 'hans.erik.heggem@gmail.com'
+    staging = True
+    InitLetsencrypt(domain, staging, email)
