@@ -1,0 +1,11 @@
+# Default values for devblog.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: hansehe/nginx-dev-blog:1.0.0-kubernetes
+
+ingress:
+  host: devblog.localhost

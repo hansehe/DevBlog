@@ -3,21 +3,23 @@ networks:
 
 volumes:
   portainer_data:
+  certbot_conf:
+  certbot_www:
   rabbitmq_data:
   postgres_data:
 
 stacks:
-  certbot: docker-compose.certbot.yml
-  nginx: docker-compose.nginx.yml
-  nginx_exporter: docker-compose.nginx-exporter.yml
-  prometheus: docker-compose.prometheus.yml
-  grafana: docker-compose.grafana.yml
   portainer: docker-compose.portainer.yml
-  postgres_db: docker-compose.db.postgres.yml
-  rabbitmq: docker-compose.rabbitmq.yml
-  rabbitmq_exporter: docker-compose.rabbitmq.exporter.yml
-  pingpong_server: docker-compose.pingpong.server.yml
-  pingpong_client: docker-compose.pingpong.client.yml
+  nginx: docker-compose.nginx.yml
+  certbot: docker-compose.certbot.yml
+  # nginx_exporter: docker-compose.nginx-exporter.yml
+  # prometheus: docker-compose.prometheus.yml
+  # grafana: docker-compose.grafana.yml
+  # postgres_db: docker-compose.db.postgres.yml
+  # rabbitmq: docker-compose.rabbitmq.yml
+  # rabbitmq_exporter: docker-compose.rabbitmq.exporter.yml
+  # pingpong_server: docker-compose.pingpong.server.yml
+  # pingpong_client: docker-compose.pingpong.client.yml
 
 env_files:
   - .env

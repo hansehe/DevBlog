@@ -8,17 +8,23 @@ services:
       dockerfile: Dockerfile
     networks:
       - backend_network
-    volumes:
-      - ./certbot/conf:/etc/letsencrypt
-      - ./certbot/www:/var/www/certbot
+    # volumes:
+    #   - certbot_conf:/etc/letsencrypt
+    #   - certbot_www:/var/www/certbot
     ports:
-      - 80:80
-      - 443:443
-      - 3000:3000
-      - 9090:9090
-      - 15672:15672
+      - 8080:80
+      - 444:443
+      # - 3000:3000
+      # - 9090:9090
+      # - 15672:15672
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
 
 networks:
   backend_network:
     external: true
+
+# volumes:
+#   certbot_conf:
+#     external: true
+#   certbot_www:
+#     external: true

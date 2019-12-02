@@ -14,6 +14,25 @@ build:
         blog:
             directory: src
             additionalTag: latest
+            cmd:
+                - python Tools/CreateDefaultCertificates.py
+            files:
+                - docker-compose.nginx.yml
+        grafana:
+            directory: src
+            additionalTag: latest
+            files:
+                - docker-compose.grafana.yml
+        prometheus:
+            directory: src
+            additionalTag: latest
+            files:
+                - docker-compose.prometheus.yml
+
+run:
+    selections:
+        blog:
+            directory: src
             files:
                 - docker-compose.nginx.yml
         grafana:

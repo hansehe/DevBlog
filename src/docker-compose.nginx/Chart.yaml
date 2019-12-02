@@ -1,0 +1,7 @@
+name: .\docker-compose.nginx
+description: A generated Helm Chart for .\docker-compose.nginx from Skippbox Kompose
+version: 0.0.1
+keywords:
+  - .\docker-compose.nginx
+sources:
+home:

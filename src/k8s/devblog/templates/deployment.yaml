@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: devblog
+  labels:
+    io.kompose.service: devblog
+spec:
+  replicas: {{ .Values.replicaCount }}
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        io.kompose.service: devblog
+    spec:
+      containers:
+        - name: devblog
+          image: {{ .Values.image.repository }}
+          ports:
+            - containerPort: 80
+      restartPolicy: Always
