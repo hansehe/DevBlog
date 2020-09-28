@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "hansehe-devblog.fullname" . }}
+  labels:
+    {{- include "hansehe-devblog.labels" . | nindent 4 }}
+  annotations:
+  {{- if .Values.service.annotations }}
+{{ toYaml .Values.service.annotations | indent 4 }}
+  {{- end }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "hansehe-devblog.selectorLabels" . | nindent 4 }}

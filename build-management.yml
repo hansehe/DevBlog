@@ -32,6 +32,10 @@ build:
             additionalTag: latest
             files:
                 - docker-compose.prometheus.yml
+        helm:
+            directory: helm
+            cmd: 
+                - helm template hansehe-devblog
 
 publish:
     selections:
@@ -50,3 +54,9 @@ publish:
             additionalTag: latest
             files:
                 - docker-compose.prometheus.yml
+        helm:
+            directory: helm
+            cmd: 
+                - helm template hansehe-devblog
+                - helm package hansehe-devblog --destination charts --app-version ${VERSION}
+                - helm repo index ./charts

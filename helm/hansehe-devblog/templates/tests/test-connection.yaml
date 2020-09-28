@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "hansehe-devblog.fullname" . }}-test-connection"
+  labels:
+{{ include "hansehe-devblog.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test-success
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args:  ['{{ include "hansehe-devblog.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never

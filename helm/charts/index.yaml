@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  hansehe-devblog:
+  - apiVersion: v2
+    appVersion: 2.0.0
+    created: "2020-09-29T01:00:34.6716166+02:00"
+    description: Hansehe devblog helm chart
+    digest: 2e32ffc157b7ee0d6f8ad7459a4ea90b4d3b28923ee649b5fa517ff0c16b15fd
+    name: hansehe-devblog
+    type: application
+    urls:
+    - hansehe-devblog-0.1.0.tgz
+    version: 0.1.0
+generated: "2020-09-29T01:00:34.6696142+02:00"
