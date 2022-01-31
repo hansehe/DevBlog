@@ -1,12 +1,13 @@
+{{- if .Values.enabled }}
 apiVersion: v1
 kind: Service
 metadata:
   name: {{ include "hansehe-devblog.fullname" . }}
   labels:
     {{- include "hansehe-devblog.labels" . | nindent 4 }}
+  {{- with .Values.service.annotations }}
   annotations:
-  {{- if .Values.service.annotations }}
-{{ toYaml .Values.service.annotations | indent 4 }}
+    {{- toYaml . | nindent 4 }}
   {{- end }}
 spec:
   type: {{ .Values.service.type }}
@@ -17,3 +18,4 @@ spec:
       name: http
   selector:
     {{- include "hansehe-devblog.selectorLabels" . | nindent 4 }}
+{{- end }}
